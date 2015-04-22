@@ -87,6 +87,7 @@ if (L.Browser.svg) { // SVG transformation
   });
 }
 
+
 // Renderer-independent
 L.Path.include({
 
@@ -97,8 +98,7 @@ L.Path.include({
    * @param  {MouseEvent} e
    */
   _onMouseClick: function(e) {
-    if ((this.dragging && this.dragging.moved()) ||
-      (this._map.dragging && this._map.dragging.moved())) {
+    if (this.dragging && this.dragging.enabled()) {
       return;
     }
 
